@@ -1,4 +1,4 @@
-package com.suraj.Voting.System;
+package com.suraj.VotingSystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

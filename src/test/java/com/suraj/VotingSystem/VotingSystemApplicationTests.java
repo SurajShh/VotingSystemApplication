@@ -1,4 +1,4 @@
-package com.suraj.Voting.System;
+package com.suraj.VotingSystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
