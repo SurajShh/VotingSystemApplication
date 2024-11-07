@@ -1,0 +1,24 @@
+This file explains the architectural and design decisions behind the application.
+
+
+## Architecture Overview
+This application follows a layered architecture with the following main components:
+1. Controller Layer: Handles HTTP requests and responses. Maps API endpoints to service calls.
+2. Service Layer: Contains the business logic of the application. Manages operations like adding candidates, casting votes, and retrieving statistics.
+3. Model Layer: Defines the data model, representing each candidate with attributes such as name, vote count, and vote history.
+
+## Key Design Patterns and Principles
+1. Singleton Pattern: The `VotingService` is implemented as a singleton to ensure that data is managed consistently across multiple requests.
+2. Separation of Concerns: The Controller, Service, and Model layers are designed to separate responsibilities, making the application easier to test and maintain.
+3. Thread-Safety: The application uses `ConcurrentHashMap` for thread-safe storage of candidates and votes, allowing multiple users to cast votes simultaneously.
+4. RESTful Design: Each endpoint follows REST principles, making the API intuitive and easy to use.
+
+## Data Storage
+The application uses an in-memory data structure (specifically `ConcurrentHashMap`) to store candidates and votes. Each candidate has:
+- Name: Unique identifier for the candidate.
+- Vote Count: Tracks the number of votes each candidate has received.
+- Vote History: Stores the timestamps of each vote for additional tracking.
+
+## Additional Features
+1. Vote History and Statistics : Provides detailed insights into voting behavior.
+2. Enhanced Error Handling : Each endpoint returns appropriate HTTP status codes for success, errors, and invalid operations.
